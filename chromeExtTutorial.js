@@ -1,14 +1,15 @@
-let myLeads = [];
+let myLeads = ["w", "r", "3"];
 const inputBtn = document.getElementById("input-btn")
 const inputEl = document.getElementById("input-element")
 
-inputBtn.addEventListener("click", function(){           
-    //push value of InputEl into myLeads array
-    //Instead of the hard-coded page value
-    //Google -> "get value from input field javascript"
+inputBtn.addEventListener("click", function(){    
     let inputing = inputEl.value
-    myLeads.push(inputing)
+    myLeads.push(inputing)   
     console.log(myLeads)
 })
 
+//Log out the items in the myLeads array using a for loop
+for(let i = 0; i < myLeads.length; i++){
+    console.log(myLeads[i])       
+}
 
