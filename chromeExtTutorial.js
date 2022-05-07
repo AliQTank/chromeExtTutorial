@@ -1,4 +1,4 @@
-let myLeads = ["w", "r", "3"];
+let myLeads = ["facebook", "youtube", "stackoverflow"];
 const inputBtn = document.getElementById("input-btn")
 const inputEl = document.getElementById("input-element")
 const ulEl = document.getElementById("unordered-list")
@@ -9,10 +9,11 @@ inputBtn.addEventListener("click", function(){
     console.log(myLeads)
 })
 
-//Render the leads in the unordered list using ulEl.textContent
-for(let i = 0; i < myLeads.length; i++){
-    let listItem = ulEl.innerHTML += "<li>" +  myLeads[i] + "</li> "      
+//Different method
+for(let i = 0; i < myLeads.length; i++){    
+    const li = document.createElement("li") // used to create Li¿I tag
+    li.textContent = myLeads[i] //used to ADD content to LI tag
+    ulEl.append(li) //to put Li into de UL id"unordered-list""
 }
-
 
 
