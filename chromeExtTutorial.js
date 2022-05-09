@@ -15,7 +15,9 @@ if(leadsFromLocalStorage){
 //2. Listen for double clicks on the delete button 
 //3. When clicked, clear localStorage, myLeads, and teh DOM
 deleteBtn.addEventListener("dblclick", function(){
-    console.log("double clicked")
+    localStorage.clear()
+    myLeads = []
+    renderLeads()
 })
 
 inputBtn.addEventListener("click", function(){    
@@ -43,3 +45,4 @@ function renderLeads(){
     ulEl.innerHTML = listItems
 
 }
+
