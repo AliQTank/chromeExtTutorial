@@ -17,7 +17,8 @@ function renderLeads(){
         //can you make the link open in a new tab??
         listItems += `
         <li>
-            <a href='${myLeads[i]}' target=\"_blank\"> ${myLeads[i]}</a>
+            <a href='${myLeads[i]}' target=\"_blank\"> 
+                ${myLeads[i]}</a>
         </li>
         `
         
@@ -25,4 +26,3 @@ function renderLeads(){
     ulEl.innerHTML = listItems
 
 }
-
