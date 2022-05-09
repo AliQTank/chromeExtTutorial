@@ -1,17 +1,19 @@
-let myLeads = [];
+let myLeads = []
 const inputBtn = document.getElementById("input-btn")
 const inputEl = document.getElementById("input-element")
 const ulEl = document.getElementById("unordered-list")
-
-
-localStorage.clear()
-
 
 inputBtn.addEventListener("click", function(){    
     let inputing = inputEl.value
     myLeads.push(inputing) 
     inputEl.value = ""
+    // save the myLeads array to localStorage
+    // use JSON.stringify()
+    localStorage.setItem("myLeads", JSON.stringify(myLeads))
     renderLeads()
+
+    //to verify that it works:
+    console.log(localStorage.getItem("myLeads"))
  })
 
 function renderLeads(){
