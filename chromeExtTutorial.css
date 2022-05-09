@@ -26,9 +26,14 @@ button {
     padding-top: 10px;
     padding-bottom: 10px;*/
     padding: 10px /*Y axis*/20px;/*X axis*/
-    border: none;
+    border: 1px solid #5f9341;
     font-weight: bold;
 
+}
+
+#delete-btn {
+    background: white;
+    color: #5f9341;
 }
 
 ul {
