@@ -3,7 +3,7 @@ const inputBtn = document.getElementById("input-btn")
 const inputEl = document.getElementById("input-element")
 const ulEl = document.getElementById("unordered-list")
 
-localStorage.setItem("myLeads", "www.example.com")
+console.log(localStorage.getItem("myLeads"))
 
 inputBtn.addEventListener("click", function(){    
     let inputing = inputEl.value
