@@ -3,9 +3,15 @@ const inputBtn = document.getElementById("input-btn")
 const inputEl = document.getElementById("input-element")
 const ulEl = document.getElementById("unordered-list")
 
-// Get the leads from the localStorage
+
 let leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads")) 
-console.log(leadsFromLocalStorage)
+
+//1. Check if leadsFromLocalStorage is truthy
+//2. If so, set myLeads to its value and call renderLeads()
+if(leadsFromLocalStorage){
+    myLeads = leadsFromLocalStorage
+    renderLeads()
+}
 
 inputBtn.addEventListener("click", function(){    
     let inputing = inputEl.value
