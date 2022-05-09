@@ -9,16 +9,16 @@ const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
 
 if(leadsFromLocalStorage){
     myLeads = leadsFromLocalStorage
-    renderLeads()
+    render(myLeads)
 }
 
-function renderLeads(){
+function render(leads){
     let listItems = ""
-    for(let i = 0; i < myLeads.length; i++){   
+    for(let i = 0; i < leads.length; i++){    
         listItems += `
         <li>
-            <a href='${myLeads[i]}' target=\"_blank\"> 
-                ${myLeads[i]}</a>
+            <a href='${leads[i]}' target=\"_blank\"> 
+                ${leads[i]}</a>
         </li>
         `        
     }
@@ -26,12 +26,10 @@ function renderLeads(){
 }
 
 
-//2. Listen for double clicks on the delete button 
-//3. When clicked, clear localStorage, myLeads, and teh DOM
 deleteBtn.addEventListener("dblclick", function(){
     localStorage.clear()
     myLeads = []
-    renderLeads()
+    render(myLeads)
 })
 
 inputBtn.addEventListener("click", function(){    
@@ -39,10 +37,9 @@ inputBtn.addEventListener("click", function(){
     myLeads.push(inputing) 
     inputEl.value = ""
     localStorage.setItem("myLeads", JSON.stringify(myLeads))
-    renderLeads()
+    render(myLeads)
 
     //to verify that it works:
     console.log(localStorage.getItem("myLeads"))
  })
-
 
