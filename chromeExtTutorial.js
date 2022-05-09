@@ -2,16 +2,21 @@ let myLeads = []
 const inputBtn = document.getElementById("input-btn")
 const inputEl = document.getElementById("input-element")
 const ulEl = document.getElementById("unordered-list")
+//1. Store the dlete button in a deleteBtn variable
+const deleteBtn = document.getElementById("delete-btn")
 
+const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads")) 
 
-let leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads")) 
-
-//1. Check if leadsFromLocalStorage is truthy
-//2. If so, set myLeads to its value and call renderLeads()
 if(leadsFromLocalStorage){
     myLeads = leadsFromLocalStorage
     renderLeads()
 }
+
+//2. Listen for double clicks on the delete button 
+//3. When clicked, clear localStorage, myLeads, and teh DOM
+deleteBtn.addEventListener("dblclick", function(){
+    console.log("double clicked")
+})
 
 inputBtn.addEventListener("click", function(){    
     let inputing = inputEl.value
