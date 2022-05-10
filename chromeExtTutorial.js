@@ -2,8 +2,8 @@ let myLeads = []
 const inputBtn = document.getElementById("input-btn")
 const inputEl = document.getElementById("input-element")
 const ulEl = document.getElementById("unordered-list")
-//1. Store the dlete button in a deleteBtn variable
 const deleteBtn = document.getElementById("delete-btn")
+const tabBtn = document.getElementById("tab-btn")
 
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads")) 
 
@@ -11,6 +11,16 @@ if(leadsFromLocalStorage){
     myLeads = leadsFromLocalStorage
     render(myLeads)
 }
+
+const tabs = [
+    {url: "https://www.linkedin.com/in/per-harald-borgen/"}
+]
+
+//2. Listen for clicks on tabBtn. Log LinkedIn URL to the console
+tabBtn-addEventListener("click", function() {
+    console.log(tabs[0].url)
+})
+
 
 function render(leads){
     let listItems = ""
@@ -42,4 +52,5 @@ inputBtn.addEventListener("click", function(){
     //to verify that it works:
     console.log(localStorage.getItem("myLeads"))
  })
+
 
