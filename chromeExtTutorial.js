@@ -16,9 +16,14 @@ const tabs = [
     {url: "https://www.linkedin.com/in/per-harald-borgen/"}
 ]
 
-//2. Listen for clicks on tabBtn. Log LinkedIn URL to the console
-tabBtn-addEventListener("click", function() {
-    console.log(tabs[0].url)
+
+tabBtn.addEventListener("click", function() {
+    // Save the url instead of logging it out
+    //console.log(tabs[0].url)
+    myLeads.push(tabs[0].url)
+    localStorage.setItem("myLeads", JSON.stringify(myLeads))
+    render(myLeads)
+
 })
 
 
@@ -52,5 +57,4 @@ inputBtn.addEventListener("click", function(){
     //to verify that it works:
     console.log(localStorage.getItem("myLeads"))
  })
-
 
